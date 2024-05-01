@@ -15,22 +15,27 @@ section .text
     %define SYS_EXIT 60
 
 _start:
-    
-    ; Print input message
+    call printInputMessage
+    call readUserInput
+    call exitWithSuccess
+
+printInputMessage:
     mov rax, SYS_WRITE
     mov rdi, STDOUT
     mov rsi, inputMessage
     mov rdx, inputMessageLen
     syscall
+    ret
 
-    ; Read input
+readUserInput:
     mov rax, SYS_READ
     mov rdi, STDIN
     mov rsi, buffer
     mov rdx, bufferLen
     syscall
+    ret
 
-    ; Exit
+exitWithSuccess:
     mov rax, SYS_EXIT
     xor rdi, rdi
     syscall
