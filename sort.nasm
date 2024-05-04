@@ -1,3 +1,9 @@
+%define STDIN 0
+%define STDOUT 1
+%define SYS_READ 0
+%define SYS_WRITE 1
+%define SYS_EXIT 60
+
 section .data
     inputMessage: db 'Enter Numbers: ', 0
     inputMessageLen: equ $-inputMessage
@@ -7,12 +13,6 @@ section .data
 
 section .text
     global _start
-
-    %define STDIN 0
-    %define STDOUT 1
-    %define SYS_READ 0
-    %define SYS_WRITE 1
-    %define SYS_EXIT 60
 
 _start:
     call printInputMessage
