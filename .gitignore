@@ -1,2 +1,8 @@
-/sort
-/sort.o
+# to ignore all files without extension
+*
+!*/
+!*.*
+
+# ignore virtual environment and object files
+*.o
+venv

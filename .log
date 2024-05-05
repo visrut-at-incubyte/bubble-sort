@@ -1,2 +1,5 @@
 sudo apt install nasm
 *note: file descriptors: stdin(0), stdout(1), stderr(2)
+cd .history && python -m venv venv && pip install -r requirements.txt
+cat commands.example.sh | head -n 1 | xclip -selection clipboard
+*paste and run command from clipboard
