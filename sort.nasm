@@ -4,10 +4,11 @@
 %define SYS_WRITE 1
 %define SYS_EXIT 60
 
-section .data
+section .rodata
     inputMessage: db 'Enter Numbers: ', 0
     inputMessageLen: equ $-inputMessage
 
+section .data
     buffer: times 100 db 0
     bufferLen: equ $-buffer
 
